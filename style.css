@@ -1,0 +1,80 @@
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+.ticker-wrapper{
+    position: relative;
+    max-width: 800px;
+    margin: auto;
+    padding-top: 200px;
+}
+
+.big-heading{
+    display: block;
+    position: absolute;
+    font-style: italic;
+    font-size: 40px;
+    background: #e60000;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 15px;
+    letter-spacing: 3px;
+    font-weight: 700;
+    z-index: 2;
+}
+
+.big-heading::after,
+.big-heading::before{
+    content: '';
+    width: 0;
+    position: absolute;
+    border-width: 78px;
+    border-style: solid;
+    top: 0;
+    z-index: -1;
+}
+
+.big-heading::before{
+    border-color: #e60000 transparent transparent transparent;
+    right: -78px;
+}
+
+.big-heading::after{
+    border-color: transparent transparent #e60000 transparent ;
+    right: -78px;
+    top: -78px;
+}
+
+.text-update{
+    height: 70px;
+    background: #004fff;
+    overflow: hidden;
+    position: relative;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 25px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    left: 125px;
+}
+
+.text-update p{
+    position: absolute;
+    width: 150%;
+    margin: 0;
+    font-weight: 700;
+    text-align: left;
+    transform: translateX(100%);
+    animation: moving 25s linear infinite;
+}
+
+@keyframes moving{
+    0%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(-100%);
+    }
+}
